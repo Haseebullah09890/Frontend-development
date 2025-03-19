@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product-listing page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+   
+</head>
+
+<body>
+    <header>
+        <div class="top-header">
+            <div class="logo">
+                <i class="fas fa-shopping-bag"></i>
+               <a href="index.html"> <span>Brand</span></a>
+            </div>
+            <div class="search-bar">
+                <input type="search" placeholder="Search">
+                <select>
+                    <option>All category</option>
+                    <option value="Automobiles">Automobiles</option>
+                    <option value="Clothes and wear">Clothes and wear</option>
+                    <option value="Home interiors">Home interiors</option>
+                </select>
+                <button>Search</button>
+            </div>
+            <div class="icons">
+                <div class="icon"><i class="fa-solid fa-user"></i><span> Profile</span></div>
+                <div class="icon"><i class="fa-solid fa-envelope"></i> Message</div>
+                <div class="icon"><i class="fa-solid fa-heart"></i> Orders</div>
+                <div class="icon"><i class="fa-solid fa-shopping-cart"></i> My cart</div>
+            </div>
+        </div>
+        <hr>
+        <nav class="bottom-header">
+            <ul>
+                <li><i class="fas fa-bars"></i><span> All category</span></li>
+                <li>Hot offers</li>
+                <li>Gift boxes</li>
+                <li>Projects</li>
+                <li>Menu item</li>
+                <li>Help <i class="fas fa-chevron-down"></i></li>
+            </ul>
+            <div class="settings">
+                <label for="language-select">Language & Currency:</label>
+                <select id="language-select">
+                    <option value="English, USD">English, USD</option>
+                    <option value="French, EUR">French, EUR</option>
+                    <option value="Spanish, MXN">Spanish, MXN</option>
+                </select>
+
+                <label for="country-select">Ship to:</label>
+                <select id="country-select" onchange="updateFlag()">
+                    <option value="Germany"
+                        data-flag="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1920px-Flag_of_Germany.svg.png">
+                        Germany</option>
+                    <option value="USA"
+                        data-flag="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1920px-Flag_of_the_United_States.svg.png">
+                        USA</option>
+                    <option value="France"
+                        data-flag="https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/1920px-Flag_of_France.svg.png">
+                        France</option>
+                </select>
+                <img id="selected-flag" class="flag"
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1920px-Flag_of_Germany.svg.png"
+                    alt="Germany Flag">
+            </div>
+        </nav>
+        <hr>
+    </header>
+
+    <section>
+        <div class="productlisting-conatiner">
+            <div class="link-map">
+                <p>Home</p>
+                <span>></span>
+                <p>Clothing</p>
+                <span>></span>
+                <p>Men's wear</p>
+                <span>></span>
+                <p>Summer Clothing</p>
+            </div>
+            <div class="productlisting">
+                
+                <div class="sidebar-containter">
+                    <div class="side-category">
+                        <div class="heading"><h2>Category </h2><i class="fas fa-chevron-up"></i></div>
+                        <p>Mobile Accessory</p>
+                        <p>Electronics</p>
+                        <p>Smartphones</p>
+                        <p>Modern Tech</p>
+                    </div>
+                    <hr>
+                    <div class="side-brands">
+                        <div class="heading"><h2>Brands </h2><i class="fas fa-chevron-up"></i></div>
+                        <label><input type="checkbox"> Samsung</label>
+                        <label><input type="checkbox"> Apple</label>
+                        <label><input type="checkbox"> Huawei</label>
+                        <label><input type="checkbox"> Poco</label>
+                        <label><input type="checkbox"> Lenovo</label>
+                        <a>See All</a>
+                    </div>
+                    <hr>
+                    <div class="side-features">
+                        <div class="heading"><h2>Features</h2><i class="fas fa-chevron-up"></i></div>
+                        <label><input type="checkbox"> Metallic</label>
+                        <label><input type="checkbox"> Plastic Cover</label>
+                        <label><input type="checkbox"> 8GB RAM</label>
+                        <label><input type="checkbox"> Super Power</label>
+                        <label><input type="checkbox"> Large Memory</label>
+                        <a>See All</a>
+                    </div>
+                    <hr>
+                    <div class="side-pricerange">
+                        <div class="heading"><h2>Pricing Range</h2><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <hr>
+                    <div class="side-Condition">
+                        <div class="heading"><h2>Condition</h2><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <hr>
+                    <div class="side-Ratings">
+                        <div class="heading"><h2>Ratings</h2><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <hr>
+                    <div class="side-Manufacturer">
+                        <div class="heading"><h2>Manufacturer</h2><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                </div>
+                <div class="main">
+                    
+                    <div class="search-container">
+                        <input type="text" placeholder="Search products..." class="search-input">
+                        
+                        <label class="verified-label">
+                            <input type="checkbox"> Verified only
+                        </label>
+                
+                        <select class="sort-dropdown">
+                            <option>Featured</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                        </select>
+                
+                        <div class="view-toggle">
+                            <button class="grid-view"><i class="fas fa-th"></i></button>
+                            <button class="list-view"><i class="fas fa-list"></i></button>
+                        </div>
+                    </div>
+
+
+                    <div class="filter-container">
+                        <div class="filter-tag">Samsung <span>X</span></div>
+                        <div class="filter-tag">Apple <span>X</span></div>
+                        <div class="filter-tag">Poco <span>X</span></div>
+                        <div class="filter-tag">Metallic <span>X</span></div>
+                        <div class="filter-tag">4 star <span>X</span></div>
+                        <div class="filter-tag">3 star <span>X</span></div>
+                        <div class="clear-filter">Clear all filter</div>
+                    </div>
+
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <img src="./public/interior/3.jpg" alt="GoPro HERO6" class="product-image">
+                            <div class="product-details">
+                                <div class="price">
+                                    <span class="current-price">$99.50</span>
+                                    <span class="old-price">$1128.00</span>
+                                </div>
+                                <div class="rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating-score">7.5</span>
+                                </div>
+                                <h3 class="product-name">Clay Pot</h3>
+                                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eaque deleniti perspiciatis officiis nesciunt? Nulla.</p>
+                                <a href="#" class="view-details">View Details</a>
+                                <button class="wishlist-btn" onclick="toggleWishlist(this)">🤍</button>
+                            </div>
+                           
+                        </div>
+                        <div class="product-card">
+                            <img src="./public/interior/2.jpg" class="product-image">
+                            <div class="product-details">
+                                <div class="price">
+                                    <span class="current-price">$99.50</span>
+                                    <span class="old-price">$1128.00</span>
+                                </div>
+                                <div class="rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating-score">7.5</span>
+                                </div>
+                                <h3 class="product-name">Contemporary chair</h3>
+                                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eaque deleniti perspiciatis officiis nesciunt? Nulla.</p>
+                                <a href="#" class="view-details">View Details</a>
+                                <button class="wishlist-btn" onclick="toggleWishlist(this)">🤍</button>
+                            </div>
+                           
+                        </div>
+                        <div class="product-card">
+                            <img src="./public/interior/1.jpg" class="product-image">
+                            <div class="product-details">
+                                <div class="price">
+                                    <span class="current-price">$99.50</span>
+                                    <span class="old-price">$1128.00</span>
+                                </div>
+                                <div class="rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating-score">7.5</span>
+                                </div>
+                                <h3 class="product-name">Soft Chairs</h3>
+                                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eaque deleniti perspiciatis officiis nesciunt? Nulla.</p>
+                                <a href="#" class="view-details">View Details</a>
+                                <button class="wishlist-btn" onclick="toggleWishlist(this)">🤍</button>
+                            </div>
+                           
+                        </div> 
+
+                        <div class="product-card">
+                            <img src="./public/interior/5.jpg"  class="product-image">
+                            <div class="product-details">
+                                <div class="price">
+                                    <span class="current-price">$99.50</span>
+                                    <span class="old-price">$1128.00</span>
+                                </div>
+                                <div class="rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating-score">7.5</span>
+                                </div>
+                                <h3 class="product-name">Inflatable Mattress</h3>
+                                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eaque deleniti perspiciatis officiis nesciunt? Nulla.</p>
+                                <a href="#" class="view-details">View Details</a>
+                                <button class="wishlist-btn" onclick="toggleWishlist(this)">🤍</button>
+                            </div>
+                           
+                        </div>
+                        <div class="product-card">
+                            <img src="./public/interior/4.jpg"  class="product-image">
+                            <div class="product-details">
+                                <div class="price">
+                                    <span class="current-price">$99.50</span>
+                                    <span class="old-price">$1128.00</span>
+                                </div>
+                                <div class="rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating-score">7.5</span>
+                                </div>
+                                <h3 class="product-name">Potted plant</h3>
+                                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eaque deleniti perspiciatis officiis nesciunt? Nulla.</p>
+                                <a href="#" class="view-details">View Details</a>
+                                <button class="wishlist-btn" onclick="toggleWishlist(this)">🤍</button>
+                            </div>
+                           
+                        </div>
+                        <div class="product-card">
+                            <img src="./public/interior/6.jpg"  class="product-image">
+                            <div class="product-details">
+                                <div class="price">
+                                    <span class="current-price">$99.50</span>
+                                    <span class="old-price">$1128.00</span>
+                                </div>
+                                <div class="rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating-score">7.5</span>
+                                </div>
+                                <h3 class="product-name">Table lamp</h3>
+                                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eaque deleniti perspiciatis officiis nesciunt? Nulla.</p>
+                                <a href="#" class="view-details">View Details</a>
+                                <button class="wishlist-btn" onclick="toggleWishlist(this)">🤍</button>
+                            </div>
+                           
+                        </div>
+                        <div class="product-card">
+                            <img src="./public/interior/7.jpg"  class="product-image">
+                            <div class="product-details">
+                                <div class="price">
+                                    <span class="current-price">$99.50</span>
+                                    <span class="old-price">$1128.00</span>
+                                </div>
+                                <div class="rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating-score">7.5</span>
+                                </div>
+                                <h3 class="product-name">Document Organizer</h3>
+                                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eaque deleniti perspiciatis officiis nesciunt? Nulla.</p>
+                                <a href="#" class="view-details">View Details</a>
+                                <button class="wishlist-btn" onclick="toggleWishlist(this)">🤍</button>
+                            </div>
+                           
+                        </div>
+                        <div class="product-card">
+                            <img src="./public/interior/8.jpg" class="product-image">
+                            <div class="product-details">
+                                <div class="price">
+                                    <span class="current-price">$99.50</span>
+                                    <span class="old-price">$1128.00</span>
+                                </div>
+                                <div class="rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating-score">7.5</span>
+                                </div>
+                                <h3 class="product-name">Coffee Machine</h3>
+                                <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eaque deleniti perspiciatis officiis nesciunt? Nulla.</p>
+                                <a href="#" class="view-details">View Details</a>
+                                <button class="wishlist-btn" onclick="toggleWishlist(this)">🤍</button>
+                            </div>
+                           
+                        </div>
+                        
+                        <!-- More Products -->
+                    </div>
+                    <div class="pagination-container">
+                        <select id="itemsPerPage" onchange="changeItemsPerPage()">
+                            <option value="10">Show 10</option>
+                            <option value="20">Show 20</option>
+                            <option value="50">Show 50</option>
+                        </select>
+                
+                        <button id="prevBtn" onclick="changePage(-1)" disabled>&lt;</button>
+                        <button class="page-number active" onclick="setPage(1)">1</button>
+                        <button class="page-number" onclick="setPage(2)">2</button>
+                        <button class="page-number" onclick="setPage(3)">3</button>
+                        <button id="nextBtn" onclick="changePage(1)">&gt;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <h3>Subscribe on our newsletter</h3>
+        <p>Get daily news on upcoming offers from many suppliers all over the world</p>
+        <div class="newsletter-form">
+            <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Email">
+            </div>
+            <button type="submit">Subscribe</button>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section brand">
+                <div class="logo">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Brand</span>
+                </div>
+                <p>Best information about the company goes here but now lorem ipsum is</p>
+                <div class="social-icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>About</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Find Store</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Blogs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Partnership</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Find Store</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Blogs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Information</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Money Refund</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>For Users</h3>
+                <ul>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">My Orders</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section app-download">
+                <h3>Get App</h3>
+                <a href="#"><img src="./assets/app store.PNG" alt="App Store"></a>
+                <a href="#"><img src="./assets/googlestore.PNG" alt="Google Play"></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2023 Ecommerce.</p>
+            <div class="language">
+                <div value="USA"
+                    data-flag="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1920px-Flag_of_the_United_States.svg.png">
+                    USA</div>
+                <span>English</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
