@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS file -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <aside class="asidebar" id="sidebar">
+        <button class="close-btn" id="closeSidebar">&times;</button>
+        <div class="profile">
+            <img src="./assets/profile.jpeg" alt="Profile">
+            <p><a href="login.html">Sign in</a> | <a href="singup.html">Register</a></p>
+        </div>
+        <nav>
+            <ul>
+                <li><i class="fas fa-home"></i> <a href="#">Home</a></li>
+                <li><i class="fas fa-list"></i> <a href="#category">Categories</a></li>
+                <li><i class="fas fa-shop"></i> <a href="productlisting.html">All product</a></li>
+                <li><i class="fas fa-heart"></i> <a href="#">Favorites</a></li>
+                <li><i class="fas fa-box"></i> <a href="#">My orders</a></li>
+                <hr>
+                <li><i class="fas fa-globe"></i> <a href="#">English | USD</a></li>
+                <li><i class="fas fa-headset"></i> <a href="#">Contact us</a></li>
+                <li><i class="fas fa-building"></i> <a href="#">About</a></li>
+            </ul>
+        </nav>
+        <div class="footer-links">
+            <a href="#">User agreement</a>
+            <a href="#">Partnership</a>
+            <a href="#">Privacy policy</a>
+        </div>
+    </aside>
+
+    <header>
+        <div class="top-header">
+            <div class="menu-bar">
+                <i class="fas fa-bars menu-icon" id="menuToggle"></i>
+                <div class="logo">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span><a href="index.html">Brand</a></span>
+                </div>
+            </div>
+            <div class="search-bar">
+                <input type="search" placeholder="Search">
+                <select>
+                    <option>All category</option>
+                    <option value="Automobiles">Automobiles</option>
+                    <option value="Clothes and wear">Clothes and wear</option>
+                    <option value="Home interiors">Home interiors</option>
+                </select>
+                <button>Search</button>
+            </div>
+            <div class="icons">
+                <div class="icon"><i class="fa-solid fa-user"></i><span> Profile</span></div>
+                <div class="icon"><i class="fa-solid fa-envelope"></i> Message</div>
+                <div class="icon"><i class="fa-solid fa-heart"></i> Orders</div>
+                <div class="icon"><i class="fa-solid fa-shopping-cart"></i> My cart</div>
+            </div>
+        </div>
+        <hr>
+        <nav class="bottom-header">
+            <ul>
+                <li><a href=""><i class="fas fa-bars"></i> All category</a></li>
+                <li><a href="">Hot offers</a></li>
+                <li><a href="">Gift boxes</a></li>
+                <li><a href="productlisting.html">All products</a></li>
+                <li><a href="">Projects</a></li>
+                <li><a href="">Menu item</a></li>
+                <li><a href="">Help</a> <i class="fas fa-chevron-down"></i></li>
+            </ul>
+            <div class="settings">
+                <label for="language-select">Language & Currency:</label>
+                <select id="language-select">
+                    <option value="English, USD">English, USD</option>
+                    <option value="French, EUR">French, EUR</option>
+                    <option value="Spanish, MXN">Spanish, MXN</option>
+                </select>
+
+                <label for="country-select">Ship to:</label>
+                <select id="country-select" onchange="updateFlag()">
+                    <option value="Germany"
+                        data-flag="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1920px-Flag_of_Germany.svg.png">
+                        Germany</option>
+                    <option value="USA"
+                        data-flag="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1920px-Flag_of_the_United_States.svg.png">
+                        USA</option>
+                    <option value="France"
+                        data-flag="https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/1920px-Flag_of_France.svg.png">
+                        France</option>
+                </select>
+                <img id="selected-flag" class="flag"
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1920px-Flag_of_Germany.svg.png"
+                    alt="Germany Flag">
+            </div>
+        </nav>
+        <hr>
+    </header>
+    <section class="product-details-page">
+        <div class="link-map">
+            <p>Home</p>
+            <span>></span>
+            <p>Clothing</p>
+            <span>></span>
+            <p>Men's wear</p>
+            <span>></span>
+            <p>Summer Clothing</p>
+        </div>
+        <div class="image-display-container">
+            <div class="image-display">
+                <div class="large-image">
+                    <img src="./public/image34.png" alt="Product Image">
+                </div>
+                <div class="image-thumbnails">
+                    <img src="./public/image34.png" alt="Thumbnail 1">
+                    <img src="./public/image34.png" alt="Thumbnail 2">
+                    <img src="./public/image34.png" alt="Thumbnail 3">
+                    <img src="./public/image34.png" alt="Thumbnail 4">
+                </div>
+            </div>
+
+            <div class="image-details">
+                <p><i class="fa fa-check"></i> In stock</p>
+                <h3>Mens Long Sleeve T-shirt Cotton Base Layer Slim Muscle</h3>
+                <div class="rating-sold">
+                    <div><i class="fa-solid fa-star"></i> 9.3</div>
+                    <div><i class="fa-solid fa-message"></i> 32 reviews</div>
+                    <div><i class="fa-solid fa-shopping-basket"></i> 154 sold</div>
+                </div>
+                <div class="quantity">
+                    <div>
+                        <p>$98.00</p>
+                        <p>50-100 pcs</p>
+                    </div>
+                    <div>
+                        <p>$90.00</p>
+                        <p>100-700 pcs</p>
+                    </div>
+                    <div>
+                        <p>$78.00</p>
+                        <p>700+ pcs</p>
+                    </div>
+                </div>
+
+                <!-- Pricing Customization Table -->
+                <div class="pricing-customization">
+                    <table>
+                        <tr>
+                            <td>
+                                <p>Price:</p>
+                            </td>
+                            <td>
+                                <p>Negotiable</p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <p>Type:</p>
+                            </td>
+                            <td>
+                                <p>Classic</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Material:</p>
+                            </td>
+                            <td>
+                                <p>Fabric</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Design:</p>
+                            </td>
+                            <td>
+                                <p>Modern</p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <p>Customization:</p>
+                            </td>
+                            <td>
+                                <p>Customized logo and design custom packages</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Protection:</p>
+                            </td>
+                            <td>
+                                <p>Refund Policy</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Warranty:</p>
+                            </td>
+                            <td>
+                                <p>2 years full warranty</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <hr>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="product-supplier">
+                <div class="supplier-profile">
+                    <div class="supplier-image">
+                        <img src="" alt="">
+                    </div>
+                    <div class="supplier-name">
+                        <p>supplier</p>
+                        <p>Guanjoi Trading LLC</p>
+                    </div>
+                </div>
+                <div class="flage-icons">
+                    <p><img src="./public/flags/germany.png" alt=""> Germany, Berlin</p>
+                    <p><i class="fa-solid fa-check"></i> Verified Seller</p>
+                    <p><i class="fa-solid fa-globe"></i> Worldwide Shipping</p>
+                    <button class="inquiry-button">Send Inquiry</button>
+                    <a href="#" class="seller-profile">Seller’s Profile</a>
+                </div>
+                <span><i class="fa-regular fa-heart"></i> Save For later</span>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container-description">
+            <div class="product-details">
+                <div class="tabs">
+                    <div class="tab active">Description</div>
+                    <div class="tab">Reviews</div>
+                    <div class="tab">Shipping</div>
+                    <div class="tab">About seller</div>
+                </div>
+                <div class="description">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus saepe reiciendis
+                        repudiandae deleniti, pariatur quas accusantium consequuntur nesciunt aut inventore voluptate
+                        alias accusamus in quod vero expedita? Eius tenetur earum cupiditate suscipit neque eos,
+                        reiciendis autem illum facere minima? Consequuntur?</p>
+                </div>
+                <table class="product-info">
+                    <tr>
+                        <td>Model</td>
+                        <td>#8786867</td>
+                    </tr>
+                    <tr>
+                        <td>Style</td>
+                        <td>Classic style</td>
+                    </tr>
+                    <tr>
+                        <td>Certificate</td>
+                        <td>ISO-898921212</td>
+                    </tr>
+                    <tr>
+                        <td>Size</td>
+                        <td>34mm x 450mm x 19mm</td>
+                    </tr>
+                    <tr>
+                        <td>Memory</td>
+                        <td>36GB RAM</td>
+                    </tr>
+                </table>
+                <table class="features-table">
+                    <tr>
+                        <td>&#10003; Some great feature name here</td>
+                    </tr>
+                    <tr>
+                        <td>&#10003; Lorem ipsum dolor sit amet, consectetur</td>
+                    </tr>
+                    <tr>
+                        <td>&#10003; Duis aute irure dolor in reprehenderit</td>
+                    </tr>
+                    <tr>
+                        <td>&#10003; Some great feature name here</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="sidebar">
+                <h3>You may like</h3>
+                <ul class="product-list">
+                    <li>
+                        <img src="./public/image39.png" alt="Men Blazers">
+                        <div>
+                            <p>Men Blazers Sets Elegant Formal</p>
+                            <p>$7.00 - $99.50</p>
+                            
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./public/image39.png" alt="Men Shirt">
+                        <div>
+                            <p>Men Shirt Sleeve Polo Contrast</p>
+                            <p>$7.00 - $99.50</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./public/image39.png" alt="Apple Watch">
+                        <div>
+                            <p>Apple Watch Series Space Gray</p>
+                            <p>$7.00 - $99.50</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./public/image39.png" alt="Basketball Crew Socks">
+                        <div>
+                            <p>Basketball Crew Socks Long Stuff</p>
+                            <p>$7.00 - $99.50</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./public/image39.png" alt="Men's T-Shirts">
+                        <div>
+                            <p>New Summer Men's Castrol T-Shirts</p>
+                            <p>$7.00 - $99.50</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="related-products">
+            <h2>Related Products</h2>
+            <div class="related-product-card">
+                <div class="product-card">
+                    <img src="./public/cloth/1.jpg" alt="T-shirts with multiple colors">
+                   <div class="product-card-detail">
+                    <p>$10.30</p>
+                    <h3>T-shirts with multiple colors, for men</h3>
+                    <button> <i class="fa-solid fa-shopping-cart"></i> Move to cart</button>
+                   </div>
+                </div>
+                <div class="product-card">
+                    <img src="./public/cloth/5.jpg" alt="Jeans shorts for men blue color">
+                    
+                    <div class="product-card-detail">
+                        <p>$10.30</p>
+                        <h3>Jeans shorts for men blue color</h3>
+                        <button> <i class="fa-solid fa-shopping-cart"></i> Move to cart</button>
+                       </div>
+                </div>
+                <div class="product-card">
+                    <img src="./public/cloth/4.jpg" alt="Brown winter coat medium size">
+                    <div class="product-card-detail">
+                        <p>$12.50</p>
+                    <h3>Brown winter coat medium size</h3>
+                        <button> <i class="fa-solid fa-shopping-cart"></i> Move to cart</button>
+                       </div>
+                </div>
+                <div class="product-card">
+                    <img src="./public/cloth/1.jpg" alt="Jeans bag for travel for men">
+                    
+                    <div class="product-card-detail">
+                        <p>$34.00</p>
+                    <h3>Jeans bag for travel for men</h3>
+                        <button> <i class="fa-solid fa-shopping-cart"></i> Move to cart</button>
+                       </div>
+                </div>
+                <div class="product-card">
+                    <img src="./public/cloth/1.jpg" alt="Leather wallet for men">
+                   
+                    <div class="product-card-detail">
+                        <p>$99.00</p>
+                        <h3>Leather wallet for men</h3>
+                        <button> <i class="fa-solid fa-shopping-cart"></i> Move to cart</button>
+                       </div>
+                </div>
+                <div class="product-card">
+                    <img src="./public/cloth/2.jpg" alt="Canon camera black, 100x zoom">
+                    
+                    <div class="product-card-detail">
+                        <p>$9.99</p>
+                    <h3>Canon camera black, 100x zoom</h3>
+                        <button> <i class="fa-solid fa-shopping-cart"></i> Move to cart</button>
+                       </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="discount-banner">
+            <div class="-discount-banner-text">
+                <h2>Super discount on more than 100 USD</h2>
+                <p>Have you ever finally just write dummy info</p>
+            </div>
+            <a href="#" class="btn">Shop now</a>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section  ">
+                <div class="logos">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span><a href="index.html">Brand</a></span>
+                </div>
+                <p class="logo-description">Best information about the company goes here but now lorem ipsum is</p>
+
+                <div class="social-icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>About</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Find Store</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Blogs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Partnership</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Find Store</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Blogs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Information</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Money Refund</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>For Users</h3>
+                <ul>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">My Orders</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section app-download">
+                <h3>Get App</h3>
+                <a href="#"><img src="./assets/app store.PNG" alt="App Store"></a>
+                <a href="#"><img src="./assets/googlestore.PNG" alt="Google Play"></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2023 Ecommerce.</p>
+            <div class="settings">
+
+                <label for="country-select">Ship to:</label>
+                <select id="country-select" onchange="updateFlag()">
+                    <option value="Germany"
+                        data-flag="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1920px-Flag_of_Germany.svg.png">
+                        Germany</option>
+                    <option value="USA"
+                        data-flag="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1920px-Flag_of_the_United_States.svg.png">
+                        USA</option>
+                    <option value="France"
+                        data-flag="https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/1920px-Flag_of_France.svg.png">
+                        France</option>
+                </select>
+                <img id="selected-flag" class="flag"
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1920px-Flag_of_Germany.svg.png"
+                    alt="Germany Flag">
+            </div>
+        </div>
+
+
+
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
